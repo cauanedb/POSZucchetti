@@ -127,6 +127,15 @@ tr:last-child td{border-bottom:none}
 .theme-item-meta{color:#9ca3af;font-size:11px;margin-top:2px}
 .theme-empty{padding:20px 14px;text-align:center;color:#9ca3af;font-size:13px}
 .theme-count{font-size:11px;font-weight:400;opacity:.8;margin-left:4px}
+
+/* Editorias settings */
+.editoria-item{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid #f3f4f6;font-size:13px;color:#374151}
+.editoria-item:last-child{border-bottom:none}
+.editoria-item small{color:#9ca3af;margin-left:4px}
+.btn-del-editoria{background:none;border:none;cursor:pointer;color:#c4c4c4;font-size:13px;padding:2px 6px;border-radius:4px;transition:all .15s}
+.btn-del-editoria:hover{color:#dc2626;background:#fee2e2}
+.btn-settings{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.5);font-size:18px;padding:4px 6px;border-radius:6px;transition:all .15s;line-height:1}
+.btn-settings:hover{color:#fff;background:rgba(255,255,255,.12)}
 </style>
 </head>
 <body>
@@ -140,6 +149,7 @@ tr:last-child td{border-bottom:none}
     <button class="tab-btn" onclick="switchTab('themes')">Banco de temas</button>
   </div>
   <span class="saving-indicator" id="savingIndicator">💾 Salvando…</span>
+  <button class="btn-settings" onclick="openSettings()" title="Configurações">⚙️</button>
 </header>
 
 <div class="toolbar">
@@ -219,15 +229,7 @@ tr:last-child td{border-bottom:none}
           <select class="fs" id="fFormato"><option>Reels</option><option>Carrossel</option><option>Estático</option></select></div>
       </div>
       <div class="fg"><label class="fl">Editoria</label>
-        <select class="fs" id="fEditoria">
-          <option>Radar comercial</option>
-          <option>Pílula de venda</option>
-          <option>GTM</option>
-          <option>Solução na prática</option>
-          <option>Parcerias que transformam</option>
-          <option>Educativo</option>
-          <option>Pronto, deu venda</option>
-        </select></div>
+        <select class="fs" id="fEditoria"></select></div>
       <div class="fg"><label class="fl">Tema / Título</label>
         <input class="fi" type="text" id="fTema" placeholder="Descreva o tema ou título do conteúdo"></div>
       <div class="frow">
@@ -247,6 +249,26 @@ tr:last-child td{border-bottom:none}
         <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
         <button class="btn-save" onclick="savePost()">Salvar</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="settingsOverlay">
+  <div class="modal" style="max-width:420px">
+    <div class="modal-hdr">
+      <div class="modal-title">⚙️ Configurações — Editorias</div>
+      <button class="modal-x" onclick="closeSettings()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="font-size:12px;color:#6b7280;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Editorias cadastradas</div>
+      <div id="editoriasList" style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;max-height:280px;overflow-y:auto;margin-bottom:12px"></div>
+      <div style="display:flex;gap:8px">
+        <input class="fi" type="text" id="newEditoriaInput" placeholder="Nova editoria..." onkeydown="if(event.key==='Enter')addEditoria()" style="flex:1">
+        <button class="btn-save" onclick="addEditoria()" style="white-space:nowrap">+ Adicionar</button>
+      </div>
+    </div>
+    <div class="modal-ftr" style="justify-content:flex-end">
+      <button class="btn-cancel" onclick="closeSettings()">Fechar</button>
     </div>
   </div>
 </div>
@@ -272,6 +294,64 @@ let ghToken   = localStorage.getItem('gh_token') || null;
 let posts = [];
 const _now = new Date();
 let curYear = _now.getFullYear(), curMonth = _now.getMonth(), curTab = 'list', editId = null;
+
+// ── EDITORIAS ─────────────────────────────────────────────────────────────
+const DEFAULT_EDITORIAS = ['Radar comercial','Pílula de venda','GTM','Solução na prática','Parcerias que transformam','Educativo','Pronto, deu venda'];
+
+function loadEditorias(){
+  const saved = localStorage.getItem('editorias');
+  return saved ? JSON.parse(saved) : [...DEFAULT_EDITORIAS];
+}
+function saveEditorias(list){
+  localStorage.setItem('editorias', JSON.stringify(list));
+}
+function populateEditoriasSelect(){
+  const sel = document.getElementById('fEditoria');
+  const cur = sel.value;
+  const list = loadEditorias();
+  sel.innerHTML = list.map(e=>`<option>${e}</option>`).join('');
+  if(list.includes(cur)) sel.value = cur;
+}
+function openSettings(){
+  renderEditoriasList();
+  document.getElementById('settingsOverlay').classList.add('open');
+}
+function closeSettings(){
+  document.getElementById('settingsOverlay').classList.remove('open');
+  document.getElementById('newEditoriaInput').value = '';
+}
+function renderEditoriasList(){
+  const list = loadEditorias();
+  document.getElementById('editoriasList').innerHTML = list.map(e=>{
+    const inUse = posts.filter(p=>p.editoria===e).length;
+    const safe = e.replace(/'/g,"\\'");
+    return `<div class="editoria-item">
+      <span>${e}${inUse?` <small>(${inUse} post${inUse>1?'s':''})</small>`:''}</span>
+      <button class="btn-del-editoria" onclick="deleteEditoria('${safe}',${inUse})">✕</button>
+    </div>`;
+  }).join('');
+}
+function addEditoria(){
+  const input = document.getElementById('newEditoriaInput');
+  const val = input.value.trim();
+  if(!val) return;
+  const list = loadEditorias();
+  if(list.includes(val)){ alert('Essa editoria já existe.'); return; }
+  list.push(val);
+  saveEditorias(list);
+  input.value = '';
+  renderEditoriasList();
+  populateEditoriasSelect();
+}
+function deleteEditoria(name, inUse){
+  if(inUse>0){
+    if(!confirm(`"${name}" está em uso em ${inUse} post(s). Excluir mesmo assim?`)) return;
+  }
+  const list = loadEditorias().filter(e=>e!==name);
+  saveEditorias(list);
+  renderEditoriasList();
+  populateEditoriasSelect();
+}
 
 const STATUS_CLS = {
   'Briefing':'s-briefing','Gravar':'s-gravar',
@@ -590,6 +670,7 @@ function openModal(id=null, preDate=null){
     document.getElementById('fSemBriefing').value='';
     btnDel.classList.add('hidden');
   }
+  populateEditoriasSelect();
   document.getElementById('overlay').classList.add('open');
   document.getElementById('fTema').focus();
 }
@@ -647,7 +728,10 @@ async function deletePost(){
 document.getElementById('overlay').addEventListener('click',function(e){
   if(e.target===this) closeModal();
 });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+document.getElementById('settingsOverlay').addEventListener('click',function(e){
+  if(e.target===this) closeSettings();
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeModal(); closeSettings(); } });
 
 switchTab('list');
 loadData();
