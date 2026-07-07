@@ -3,7 +3,7 @@
 {
   "name": "Controle de Ações - Missão Próximo Nível",
   "schemaVersion": 1,
-  "description": "Board de prazos e ações para a execução interna do Programa de Desenvolvimento 2026 (Missão Próximo Nível), sincronizado via Supabase (mesmo projeto do calendário editorial, tabela acoes_pdn separada). Colunas A fazer / Em andamento / Concluído, por pilar (1-4), com destaque automático de atrasadas. Adicione via modal ou texto livre (Claude interpreta)."
+  "description": "Board de prazos e ações para a execução interna do Programa de Desenvolvimento 2026 (Missão Próximo Nível), sincronizado via Supabase (mesmo projeto do calendário editorial, tabela acoes_pdn separada). Colunas A fazer / Em andamento / Concluído, por pilar (1-4) e tipo de material (Live/PDF/Vídeo/Ferramenta/Checkpoint/Formulário/Acompanhamento), com destaque automático de atrasadas. Adicione via modal ou texto livre (Claude interpreta)."
 }
 </script>
 <html lang="pt-BR">
@@ -54,6 +54,14 @@ body{ font-family:Arial,sans-serif; background:#F0F2F5; color:#1E1E2E; min-heigh
 .pilar-2{ background:#E0F2FE; color:#0369A1; }
 .pilar-3{ background:#FEF9C3; color:#854D0E; }
 .pilar-4{ background:#EDE9FE; color:#6D28D9; }
+.tipo-badge{ font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; padding:2px 7px; border-radius:10px; }
+.tipo-live{ background:#FEF3C7; color:#92400E; }
+.tipo-pdf{ background:#DCFCE7; color:#15803D; }
+.tipo-video{ background:#E0F2FE; color:#0369A1; }
+.tipo-ferramenta{ background:#EDE9FE; color:#6D28D9; }
+.tipo-checkpoint{ background:#FFE4E6; color:#9F1239; }
+.tipo-formulario{ background:#F3F4F6; color:#374151; }
+.tipo-acompanhamento{ background:#CFFAFE; color:#0E7490; }
 .semana-tag{ font-size:9px; font-weight:700; color:#9CA3AF; }
 .overdue-tag{ font-size:9px; font-weight:800; text-transform:uppercase; background:#FEE2E2; color:#991B1B; padding:2px 7px; border-radius:10px; margin-left:auto; }
 .card-title{ font-size:13px; font-weight:700; color:#1E1E2E; line-height:1.4; margin-bottom:4px; }
@@ -74,7 +82,7 @@ body{ font-family:Arial,sans-serif; background:#F0F2F5; color:#1E1E2E; min-heigh
 
 /* ── MODAL ── */
 .overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; z-index:100; }
-.modal{ background:#fff; border-radius:10px; padding:20px; width:400px; max-width:95vw; box-shadow:0 20px 40px rgba(0,0,0,0.2); }
+.modal{ background:#fff; border-radius:10px; padding:20px; width:440px; max-width:95vw; box-shadow:0 20px 40px rgba(0,0,0,0.2); max-height:90vh; overflow-y:auto; }
 .modal h3{ font-size:14px; font-weight:700; margin-bottom:14px; color:#1E1E2E; }
 .mfg{ margin-bottom:10px; }
 .mfg-row{ display:flex; gap:10px; }
@@ -133,24 +141,36 @@ body{ font-family:Arial,sans-serif; background:#F0F2F5; color:#1E1E2E; min-heigh
 <div class="overlay" id="addModal" style="display:none" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <h3 id="modalTitle">Nova ação</h3>
+    <div class="mfg">
+      <label>Pilar</label>
+      <select id="mPilar">
+        <option value="1">Pilar 1 · Conexão, Reflexão e Compromisso</option>
+        <option value="2">Pilar 2 · Consciência Estrutural e Base Comercial</option>
+        <option value="3">Pilar 3 · Ação Comercial</option>
+        <option value="4">Pilar 4 · Acompanhamento e Evolução</option>
+      </select>
+    </div>
     <div class="mfg-row">
       <div class="mfg">
-        <label>Pilar</label>
-        <select id="mPilar">
-          <option value="1">Pilar 1 · Conexão, Reflexão e Compromisso</option>
-          <option value="2">Pilar 2 · Consciência Estrutural e Base Comercial</option>
-          <option value="3">Pilar 3 · Ação Comercial</option>
-          <option value="4">Pilar 4 · Acompanhamento e Evolução</option>
+        <label>Tipo de material</label>
+        <select id="mTipo">
+          <option value="live">Live</option>
+          <option value="pdf">PDF</option>
+          <option value="video">Vídeo</option>
+          <option value="ferramenta">Ferramenta</option>
+          <option value="checkpoint">Checkpoint</option>
+          <option value="formulario">Formulário</option>
+          <option value="acompanhamento">Acompanhamento</option>
         </select>
       </div>
-      <div class="mfg" style="max-width:120px">
+      <div class="mfg">
         <label>Semana</label>
         <input type="text" id="mSemana" placeholder="Ex: Semana 3">
       </div>
     </div>
     <div class="mfg">
-      <label>Ação</label>
-      <textarea id="mTitulo" placeholder="Descreva a ação..."></textarea>
+      <label>Ação / Material</label>
+      <textarea id="mTitulo" placeholder="Descreva a ação ou o material..."></textarea>
     </div>
     <div class="mfg-row">
       <div class="mfg">
@@ -181,7 +201,7 @@ body{ font-family:Arial,sans-serif; background:#F0F2F5; color:#1E1E2E; min-heigh
 <div class="overlay" id="nlModal" style="display:none" onclick="if(event.target===this)closeNL()">
   <div class="nl-modal">
     <h3>✨ Adicionar via Claude</h3>
-    <p>Descreva a ação em texto livre. Ex: <em>"Pilar 2, revisar kit de comunicação da semana 3, prazo até 15/07"</em></p>
+    <p>Descreva a ação em texto livre. Ex: <em>"Pilar 2, PDF da semana 3 sobre comunicação, prazo até 15/07"</em></p>
     <textarea id="nlText" placeholder="Descreva a ação..."></textarea>
     <div class="nl-status" id="nlStatus"></div>
     <div class="modal-btns" style="margin-top:10px">
@@ -207,6 +227,10 @@ const TABLE = 'acoes_pdn';
 const COLS = ['afazer','andamento','concluido'];
 const COL_LABELS = { afazer:'A fazer', andamento:'Em andamento', concluido:'Concluído' };
 const PILAR_LABELS = { 1:'Pilar 1', 2:'Pilar 2', 3:'Pilar 3', 4:'Pilar 4' };
+const TIPO_LABELS = {
+  live:'Live', pdf:'PDF', video:'Vídeo', ferramenta:'Ferramenta',
+  checkpoint:'Checkpoint', formulario:'Formulário', acompanhamento:'Acompanhamento'
+};
 
 let actions = [];
 let activeFilter = 'todos';
@@ -356,6 +380,7 @@ function cardHtml(a){
   return `<div class="card${overdue?' overdue':''}">
     <div class="card-top">
       <span class="pilar-badge pilar-${a.pilar}">${PILAR_LABELS[a.pilar]}</span>
+      ${a.tipo ? `<span class="tipo-badge tipo-${a.tipo}">${TIPO_LABELS[a.tipo] || a.tipo}</span>` : ''}
       ${a.semana ? `<span class="semana-tag">${escapeHtml(a.semana)}</span>` : ''}
       ${overdue ? `<span class="overdue-tag">Atrasada</span>` : ''}
     </div>
@@ -383,6 +408,7 @@ function openAdd(status){
   editingId = null;
   document.getElementById('modalTitle').textContent = 'Nova ação';
   document.getElementById('mPilar').value = '1';
+  document.getElementById('mTipo').value = 'pdf';
   document.getElementById('mSemana').value = '';
   document.getElementById('mTitulo').value = '';
   document.getElementById('mPrazo').value = '';
@@ -398,6 +424,7 @@ function editAction(id){
   editingId = id;
   document.getElementById('modalTitle').textContent = 'Editar ação';
   document.getElementById('mPilar').value = a.pilar;
+  document.getElementById('mTipo').value = a.tipo || 'pdf';
   document.getElementById('mSemana').value = a.semana || '';
   document.getElementById('mTitulo').value = a.titulo;
   document.getElementById('mPrazo').value = a.prazo || '';
@@ -414,6 +441,7 @@ async function saveAction(){
 
   const data = {
     pilar:   parseInt(document.getElementById('mPilar').value),
+    tipo:    document.getElementById('mTipo').value,
     semana:  document.getElementById('mSemana').value.trim() || null,
     titulo,
     prazo:   document.getElementById('mPrazo').value || null,
@@ -463,8 +491,9 @@ async function processNL(){
     const prompt = `Parse this Portuguese task/action entry for the Zucchetti "Missão Próximo Nível" program (Programa de Desenvolvimento 2026). Today is ${today}.
 Return ONLY a JSON object with:
 - "pilar": integer 1-4. Pilar 1 = Conexão/Reflexão/Compromisso (semana 1). Pilar 2 = Consciência Estrutural e Base Comercial (semanas 2-3). Pilar 3 = Ação Comercial (semanas 4-6). Pilar 4 = Acompanhamento e Evolução (semanas 7-10). Infer from context, default 1.
+- "tipo": one of "live","pdf","video","ferramenta","checkpoint","formulario","acompanhamento". Infer from context (ex: "gravar live" -> live, "criar pdf/material" -> pdf, "vídeo" -> video, "planilha/modelo/ferramenta" -> ferramenta, "checkpoint/revisão de rota" -> checkpoint, "formulário/inscrição" -> formulario, "acompanhamento/sessão" -> acompanhamento). Default "pdf" if unclear.
 - "semana": short label like "Semana 3", or null if not mentioned.
-- "titulo": clear title of the action/task.
+- "titulo": clear title of the action/material.
 - "prazo": YYYY-MM-DD deadline. Parse relative dates like "até 15/07" -> 2026-07-15, "semana que vem" -> next Monday. If unclear, use 7 days from today.
 - "status": one of "afazer","andamento","concluido". Default "afazer". "andamento" if text implies it already started. "concluido" if text says it's done.
 - "obs": any extra detail/context, or null.
@@ -480,6 +509,7 @@ Return ONLY the JSON.`;
 
     const ok = await insertAction({
       pilar:  j.pilar || 1,
+      tipo:   j.tipo || 'pdf',
       semana: j.semana || null,
       titulo: j.titulo,
       prazo:  j.prazo || today,
