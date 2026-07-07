@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Controle de Ações - Missão Próximo Nível",
+  "schemaVersion": 1,
+  "description": "Board de prazos e ações para a execução interna do Programa de Desenvolvimento 2026 (Missão Próximo Nível), sincronizado via Supabase (mesmo projeto do calendário editorial, tabela acoes_pdn separada). Colunas A fazer / Em andamento / Concluído, por pilar (1-4), com destaque automático de atrasadas. Adicione via modal ou texto livre (Claude interpreta)."
+}
+</script>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Controle de Prazos e Ações</title>
+<style>
+:root { color-scheme: light; }
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{ font-family:Arial,sans-serif; background:#F0F2F5; color:#1E1E2E; min-height:100vh; display:flex; flex-direction:column; }
+
+/* ── HEADER ── */
+.hdr{ background:#1E1E2E; color:#fff; padding:10px 16px; display:flex; align-items:center; gap:12px; flex-shrink:0; flex-wrap:wrap; }
+.hdr h1{ font-size:15px; font-weight:700; }
+.hdr .brand{ color:#9CA3AF; font-size:11px; }
+.saving-indicator{ font-size:11px; color:#60A5FA; font-style:italic; display:none; margin-left:4px; }
+.saving-indicator.visible{ display:inline; }
+.hdr-btns{ display:flex; align-items:center; gap:6px; margin-left:auto; }
+.btn-nl{ background:#2563EB; border:none; color:#fff; padding:6px 14px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:700; }
+.btn-nl:hover{ background:#1D4ED8; }
+.btn-add{ background:rgba(255,255,255,0.12); border:none; color:#fff; padding:6px 14px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:700; }
+.btn-add:hover{ background:rgba(255,255,255,0.22); }
+
+/* ── FILTER / STATS BAR ── */
+.filterbar{ background:#fff; border-bottom:1px solid #E5E7EB; padding:8px 16px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; flex-shrink:0; }
+.chip{ background:#F3F4F6; border:1px solid transparent; color:#374151; font-size:11px; font-weight:700; padding:5px 12px; border-radius:20px; cursor:pointer; }
+.chip:hover{ background:#E5E7EB; }
+.chip.active{ background:#1E1E2E; color:#fff; }
+.stats-bar{ margin-left:auto; display:flex; gap:14px; }
+.stat-item{ font-size:11px; color:#6B7280; }
+.stat-item strong{ color:#1E1E2E; }
+.stat-item.warn strong{ color:#DC2626; }
+
+/* ── BOARD ── */
+.board-wrap{ flex:1; padding:14px 16px; overflow:auto; }
+.board{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; align-items:start; min-width:760px; }
+.col{ background:#E9EBEF; border-radius:10px; padding:10px; display:flex; flex-direction:column; gap:8px; min-height:200px; }
+.col-hdr{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 6px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.4px; color:#374151; }
+.col-hdr .cnt{ background:#fff; border-radius:10px; padding:1px 8px; font-size:11px; color:#6B7280; }
+
+/* ── CARD ── */
+.card{ background:#fff; border-radius:8px; padding:10px 12px; box-shadow:0 1px 2px rgba(0,0,0,.06); border:1px solid #E5E7EB; }
+.card.overdue{ border-color:#FCA5A5; }
+.card-top{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin-bottom:6px; }
+.pilar-badge{ font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; padding:2px 7px; border-radius:10px; }
+.pilar-1{ background:#DCFCE7; color:#15803D; }
+.pilar-2{ background:#E0F2FE; color:#0369A1; }
+.pilar-3{ background:#FEF9C3; color:#854D0E; }
+.pilar-4{ background:#EDE9FE; color:#6D28D9; }
+.semana-tag{ font-size:9px; font-weight:700; color:#9CA3AF; }
+.overdue-tag{ font-size:9px; font-weight:800; text-transform:uppercase; background:#FEE2E2; color:#991B1B; padding:2px 7px; border-radius:10px; margin-left:auto; }
+.card-title{ font-size:13px; font-weight:700; color:#1E1E2E; line-height:1.4; margin-bottom:4px; }
+.card-prazo{ font-size:11px; color:#6B7280; margin-bottom:4px; }
+.card.overdue .card-prazo{ color:#DC2626; font-weight:700; }
+.card-obs{ font-size:11px; color:#6B7280; line-height:1.4; margin-bottom:6px; padding-top:4px; border-top:1px dashed #E5E7EB; }
+.card-actions{ display:flex; gap:6px; justify-content:flex-end; }
+.card-actions button{ background:none; border:1px solid #E5E7EB; border-radius:6px; font-size:11px; padding:3px 8px; cursor:pointer; color:#374151; }
+.card-actions button:hover{ background:#F3F4F6; }
+.card-actions .del{ color:#DC2626; border-color:#FECACA; }
+.card-actions .del:hover{ background:#FEF2F2; }
+
+.add-card-btn{ width:100%; background:none; border:1.5px dashed #C7CAD1; border-radius:8px; color:#9CA3AF; font-size:12px; cursor:pointer; padding:8px; transition:all .1s; }
+.add-card-btn:hover{ border-color:#3B82F6; color:#3B82F6; background:#EFF6FF; }
+
+.empty-hint{ font-size:11px; color:#9CA3AF; text-align:center; padding:10px 0; }
+.load-hint{ font-size:12px; color:#9CA3AF; text-align:center; padding:24px 0; }
+
+/* ── MODAL ── */
+.overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; z-index:100; }
+.modal{ background:#fff; border-radius:10px; padding:20px; width:400px; max-width:95vw; box-shadow:0 20px 40px rgba(0,0,0,0.2); }
+.modal h3{ font-size:14px; font-weight:700; margin-bottom:14px; color:#1E1E2E; }
+.mfg{ margin-bottom:10px; }
+.mfg-row{ display:flex; gap:10px; }
+.mfg-row .mfg{ flex:1; }
+.mfg label{ display:block; font-size:11px; font-weight:700; color:#374151; text-transform:uppercase; letter-spacing:0.4px; margin-bottom:3px; }
+.mfg select, .mfg input, .mfg textarea{ width:100%; border:1px solid #D1D5DB; border-radius:6px; padding:7px 10px; font-size:13px; color:#1E1E2E; font-family:Arial; }
+.mfg select:focus, .mfg input:focus, .mfg textarea:focus{ outline:none; border-color:#3B82F6; }
+.mfg textarea{ resize:vertical; min-height:50px; }
+.modal-btns{ display:flex; gap:8px; margin-top:14px; }
+.btn-cancel{ flex:1; background:#F3F4F6; border:none; padding:9px; border-radius:6px; cursor:pointer; font-size:13px; color:#374151; }
+.btn-cancel:hover{ background:#E5E7EB; }
+.btn-save{ flex:2; background:#1E1E2E; border:none; color:#fff; padding:9px; border-radius:6px; cursor:pointer; font-size:13px; font-weight:700; }
+.btn-save:hover{ background:#374151; }
+.btn-save:disabled{ background:#9CA3AF; cursor:not-allowed; }
+
+/* ── NL MODAL ── */
+.nl-modal{ background:#fff; border-radius:10px; padding:20px; width:420px; max-width:95vw; box-shadow:0 20px 40px rgba(0,0,0,0.2); }
+.nl-modal h3{ font-size:14px; font-weight:700; margin-bottom:8px; }
+.nl-modal p{ font-size:12px; color:#6B7280; margin-bottom:12px; }
+.nl-modal textarea{ width:100%; border:1px solid #D1D5DB; border-radius:6px; padding:9px; font-size:13px; font-family:Arial; resize:vertical; min-height:80px; }
+.nl-modal textarea:focus{ outline:none; border-color:#3B82F6; }
+.btn-process{ background:#2563EB; border:none; color:#fff; padding:9px 16px; border-radius:6px; cursor:pointer; font-size:13px; font-weight:700; }
+.btn-process:hover{ background:#1D4ED8; }
+.btn-process:disabled{ background:#93C5FD; cursor:not-allowed; }
+.nl-status{ font-size:12px; color:#6B7280; margin-top:6px; min-height:18px; }
+
+/* ── TOAST ── */
+.toast{ position:fixed; bottom:14px; right:14px; background:#1E1E2E; color:#fff; padding:9px 14px; border-radius:8px; font-size:12px; opacity:0; transition:opacity 0.25s; z-index:200; pointer-events:none; }
+.toast.show{ opacity:1; }
+.toast.err{ background:#DC2626; }
+
+@media(max-width:760px){ .board{ grid-template-columns:1fr; min-width:0; } }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <h1>Controle de Prazos e Ações</h1>
+    <div class="brand">Zucchetti Brasil · Missão Próximo Nível — Programa de Desenvolvimento 2026</div>
+  </div>
+  <span class="saving-indicator" id="savingIndicator">💾 Salvando…</span>
+  <div class="hdr-btns">
+    <button class="btn-nl" onclick="openNL()">✨ Adicionar via Claude</button>
+    <button class="btn-add" onclick="openAdd('afazer')">+ Nova ação</button>
+  </div>
+</div>
+
+<div class="filterbar" id="filterBar"></div>
+
+<div class="board-wrap">
+  <div class="board" id="board"><div class="load-hint">Carregando ações…</div></div>
+</div>
+
+<!-- Add/edit modal -->
+<div class="overlay" id="addModal" style="display:none" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h3 id="modalTitle">Nova ação</h3>
+    <div class="mfg-row">
+      <div class="mfg">
+        <label>Pilar</label>
+        <select id="mPilar">
+          <option value="1">Pilar 1 · Conexão, Reflexão e Compromisso</option>
+          <option value="2">Pilar 2 · Consciência Estrutural e Base Comercial</option>
+          <option value="3">Pilar 3 · Ação Comercial</option>
+          <option value="4">Pilar 4 · Acompanhamento e Evolução</option>
+        </select>
+      </div>
+      <div class="mfg" style="max-width:120px">
+        <label>Semana</label>
+        <input type="text" id="mSemana" placeholder="Ex: Semana 3">
+      </div>
+    </div>
+    <div class="mfg">
+      <label>Ação</label>
+      <textarea id="mTitulo" placeholder="Descreva a ação..."></textarea>
+    </div>
+    <div class="mfg-row">
+      <div class="mfg">
+        <label>Prazo</label>
+        <input type="date" id="mPrazo">
+      </div>
+      <div class="mfg">
+        <label>Status</label>
+        <select id="mStatus">
+          <option value="afazer">A fazer</option>
+          <option value="andamento">Em andamento</option>
+          <option value="concluido">Concluído</option>
+        </select>
+      </div>
+    </div>
+    <div class="mfg">
+      <label>Observação</label>
+      <textarea id="mObs" placeholder="Detalhes, links, contexto... (opcional)"></textarea>
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      <button class="btn-save" id="btnSaveAction" onclick="saveAction()">Salvar ação</button>
+    </div>
+  </div>
+</div>
+
+<!-- NL modal -->
+<div class="overlay" id="nlModal" style="display:none" onclick="if(event.target===this)closeNL()">
+  <div class="nl-modal">
+    <h3>✨ Adicionar via Claude</h3>
+    <p>Descreva a ação em texto livre. Ex: <em>"Pilar 2, revisar kit de comunicação da semana 3, prazo até 15/07"</em></p>
+    <textarea id="nlText" placeholder="Descreva a ação..."></textarea>
+    <div class="nl-status" id="nlStatus"></div>
+    <div class="modal-btns" style="margin-top:10px">
+      <button class="btn-cancel" onclick="closeNL()">Cancelar</button>
+      <button class="btn-process" id="nlProcessBtn" onclick="processNL()">Processar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONFIG SUPABASE (mesmo projeto do calendário editorial, tabela separada) ─
+const SB_URL = 'https://qveztulqkzvthupibenc.supabase.co';
+const SB_KEY = 'sb_publishable_DZ-pLsOTkBVwinU3U_VYUA_rLbrClcW';
+const SB_HDR = {
+  'apikey': SB_KEY,
+  'Authorization': `Bearer ${SB_KEY}`,
+  'Content-Type': 'application/json'
+};
+const TABLE = 'acoes_pdn';
+
+const COLS = ['afazer','andamento','concluido'];
+const COL_LABELS = { afazer:'A fazer', andamento:'Em andamento', concluido:'Concluído' };
+const PILAR_LABELS = { 1:'Pilar 1', 2:'Pilar 2', 3:'Pilar 3', 4:'Pilar 4' };
+
+let actions = [];
+let activeFilter = 'todos';
+let editingId = null;
+
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+function setSaving(v){ document.getElementById('savingIndicator').classList.toggle('visible', v); }
+const todayISO = () => new Date().toISOString().slice(0,10);
+
+const fmtDateBR = iso => {
+  if(!iso) return '—';
+  const [y,m,d] = iso.split('-');
+  return `${d}/${m}/${y}`;
+};
+
+function isOverdue(a){
+  return a.status !== 'concluido' && a.prazo && a.prazo < todayISO();
+}
+
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+// ── SUPABASE API ─────────────────────────────────────────────────────────
+async function loadData(){
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/${TABLE}?select=*&order=prazo`, { headers: SB_HDR });
+    if(!r.ok) throw new Error(await r.text());
+    actions = await r.json();
+  } catch(e){
+    console.warn('Erro ao carregar do Supabase:', e);
+    document.getElementById('board').innerHTML = `<div class="load-hint">Não consegui carregar os dados. Verifique a conexão e recarregue a página.</div>`;
+    return;
+  }
+  render();
+}
+
+async function insertAction(data){
+  setSaving(true);
+  try {
+    const row = { id: uid(), ...data };
+    const r = await fetch(`${SB_URL}/rest/v1/${TABLE}`, {
+      method: 'POST',
+      headers: { ...SB_HDR, 'Prefer': 'return=representation' },
+      body: JSON.stringify(row)
+    });
+    if(!r.ok) throw new Error(await r.text());
+    const rows = await r.json();
+    actions.push(rows[0]);
+    return true;
+  } catch(e){
+    toast('Erro ao salvar: ' + e.message, true);
+    return false;
+  } finally {
+    setSaving(false);
+  }
+}
+
+async function updateAction(id, data){
+  setSaving(true);
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      headers: { ...SB_HDR, 'Prefer': 'return=representation' },
+      body: JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error(await r.text());
+    const rows = await r.json();
+    const i = actions.findIndex(x => x.id === id);
+    if(i >= 0) actions[i] = rows[0];
+    return true;
+  } catch(e){
+    toast('Erro ao atualizar: ' + e.message, true);
+    return false;
+  } finally {
+    setSaving(false);
+  }
+}
+
+async function deleteAction(id){
+  setSaving(true);
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+      headers: SB_HDR
+    });
+    if(!r.ok) throw new Error(await r.text());
+    actions = actions.filter(x => x.id !== id);
+    return true;
+  } catch(e){
+    toast('Erro ao excluir: ' + e.message, true);
+    return false;
+  } finally {
+    setSaving(false);
+  }
+}
+
+// ── RENDER ───────────────────────────────────────────────────────────────
+function renderFilterBar(){
+  const opts = [['todos','Todos'],['1','Pilar 1'],['2','Pilar 2'],['3','Pilar 3'],['4','Pilar 4']];
+  const chips = opts.map(([val,label]) =>
+    `<button class="chip${activeFilter===val?' active':''}" onclick="setFilter('${val}')">${label}</button>`
+  ).join('');
+
+  const visible = filteredActions();
+  const overdueCount = visible.filter(isOverdue).length;
+  const doneCount = visible.filter(a => a.status==='concluido').length;
+
+  document.getElementById('filterBar').innerHTML = chips +
+    `<div class="stats-bar">
+      <div class="stat-item">Total: <strong>${visible.length}</strong></div>
+      <div class="stat-item warn">Atrasadas: <strong>${overdueCount}</strong></div>
+      <div class="stat-item">Concluídas: <strong>${doneCount}</strong></div>
+    </div>`;
+}
+
+function setFilter(val){ activeFilter = val; render(); }
+
+function filteredActions(){
+  if(activeFilter === 'todos') return actions;
+  return actions.filter(a => String(a.pilar) === activeFilter);
+}
+
+function render(){
+  renderFilterBar();
+  const visible = filteredActions();
+
+  document.getElementById('board').innerHTML = COLS.map(col => {
+    const items = visible.filter(a => a.status === col)
+      .sort((a,b) => (a.prazo||'9999').localeCompare(b.prazo||'9999'));
+
+    const cardsHtml = items.length ? items.map(a => cardHtml(a)).join('') :
+      `<div class="empty-hint">Nenhuma ação aqui</div>`;
+
+    return `<div class="col">
+      <div class="col-hdr"><span>${COL_LABELS[col]}</span><span class="cnt">${items.length}</span></div>
+      ${cardsHtml}
+      <button class="add-card-btn" onclick="openAdd('${col}')">+ ação</button>
+    </div>`;
+  }).join('');
+}
+
+function cardHtml(a){
+  const overdue = isOverdue(a);
+  return `<div class="card${overdue?' overdue':''}">
+    <div class="card-top">
+      <span class="pilar-badge pilar-${a.pilar}">${PILAR_LABELS[a.pilar]}</span>
+      ${a.semana ? `<span class="semana-tag">${escapeHtml(a.semana)}</span>` : ''}
+      ${overdue ? `<span class="overdue-tag">Atrasada</span>` : ''}
+    </div>
+    <div class="card-title">${escapeHtml(a.titulo)}</div>
+    <div class="card-prazo">Prazo: ${fmtDateBR(a.prazo)}</div>
+    ${a.obs ? `<div class="card-obs">${escapeHtml(a.obs)}</div>` : ''}
+    <div class="card-actions">
+      ${a.status !== 'concluido' ? `<button onclick="advance('${a.id}')">→ avançar</button>` : ''}
+      <button onclick="editAction('${a.id}')">✎ editar</button>
+      <button class="del" onclick="delAction('${a.id}')">× excluir</button>
+    </div>
+  </div>`;
+}
+
+async function advance(id){
+  const a = actions.find(x => x.id===id);
+  if(!a) return;
+  const i = COLS.indexOf(a.status);
+  const newStatus = COLS[Math.min(i+1, COLS.length-1)];
+  await updateAction(id, { status: newStatus });
+  render();
+}
+
+function openAdd(status){
+  editingId = null;
+  document.getElementById('modalTitle').textContent = 'Nova ação';
+  document.getElementById('mPilar').value = '1';
+  document.getElementById('mSemana').value = '';
+  document.getElementById('mTitulo').value = '';
+  document.getElementById('mPrazo').value = '';
+  document.getElementById('mStatus').value = status;
+  document.getElementById('mObs').value = '';
+  document.getElementById('addModal').style.display = 'flex';
+  setTimeout(() => document.getElementById('mTitulo').focus(), 50);
+}
+
+function editAction(id){
+  const a = actions.find(x => x.id===id);
+  if(!a) return;
+  editingId = id;
+  document.getElementById('modalTitle').textContent = 'Editar ação';
+  document.getElementById('mPilar').value = a.pilar;
+  document.getElementById('mSemana').value = a.semana || '';
+  document.getElementById('mTitulo').value = a.titulo;
+  document.getElementById('mPrazo').value = a.prazo || '';
+  document.getElementById('mStatus').value = a.status;
+  document.getElementById('mObs').value = a.obs || '';
+  document.getElementById('addModal').style.display = 'flex';
+}
+
+function closeModal(){ document.getElementById('addModal').style.display = 'none'; }
+
+async function saveAction(){
+  const titulo = document.getElementById('mTitulo').value.trim();
+  if(!titulo){ toast('Descreva a ação', true); return; }
+
+  const data = {
+    pilar:   parseInt(document.getElementById('mPilar').value),
+    semana:  document.getElementById('mSemana').value.trim() || null,
+    titulo,
+    prazo:   document.getElementById('mPrazo').value || null,
+    status:  document.getElementById('mStatus').value,
+  
