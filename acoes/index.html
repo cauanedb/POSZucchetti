@@ -418,4 +418,103 @@ async function saveAction(){
     titulo,
     prazo:   document.getElementById('mPrazo').value || null,
     status:  document.getElementById('mStatus').value,
-  
+    obs:     document.getElementById('mObs').value.trim() || null,
+  };
+
+  const btn = document.getElementById('btnSaveAction');
+  btn.disabled = true;
+  let ok;
+  if(editingId){
+    ok = await updateAction(editingId, data);
+    if(ok) toast('Ação atualizada!');
+  } else {
+    ok = await insertAction(data);
+    if(ok) toast('Ação adicionada!');
+  }
+  btn.disabled = false;
+  if(ok){ closeModal(); render(); }
+}
+
+async function delAction(id){
+  if(!confirm('Excluir esta ação?')) return;
+  const ok = await deleteAction(id);
+  if(ok) render();
+}
+
+function openNL(){
+  document.getElementById('nlText').value = '';
+  document.getElementById('nlStatus').textContent = '';
+  document.getElementById('nlModal').style.display = 'flex';
+  setTimeout(() => document.getElementById('nlText').focus(), 50);
+}
+function closeNL(){ document.getElementById('nlModal').style.display = 'none'; }
+
+async function processNL(){
+  const raw = document.getElementById('nlText').value.trim();
+  if(!raw) return;
+
+  const btn = document.getElementById('nlProcessBtn');
+  const st  = document.getElementById('nlStatus');
+  btn.disabled = true;
+  st.textContent = 'Processando...';
+
+  try {
+    const today = todayISO();
+    const prompt = `Parse this Portuguese task/action entry for the Zucchetti "Missão Próximo Nível" program (Programa de Desenvolvimento 2026). Today is ${today}.
+Return ONLY a JSON object with:
+- "pilar": integer 1-4. Pilar 1 = Conexão/Reflexão/Compromisso (semana 1). Pilar 2 = Consciência Estrutural e Base Comercial (semanas 2-3). Pilar 3 = Ação Comercial (semanas 4-6). Pilar 4 = Acompanhamento e Evolução (semanas 7-10). Infer from context, default 1.
+- "semana": short label like "Semana 3", or null if not mentioned.
+- "titulo": clear title of the action/task.
+- "prazo": YYYY-MM-DD deadline. Parse relative dates like "até 15/07" -> 2026-07-15, "semana que vem" -> next Monday. If unclear, use 7 days from today.
+- "status": one of "afazer","andamento","concluido". Default "afazer". "andamento" if text implies it already started. "concluido" if text says it's done.
+- "obs": any extra detail/context, or null.
+
+Text: "${raw.replace(/"/g,'\\"')}"
+Return ONLY the JSON.`;
+
+    const result = await window.cowork.askClaude(prompt, []);
+    const match = result.match(/\{[\s\S]*?\}/);
+    if(!match) throw new Error('no json');
+    const j = JSON.parse(match[0]);
+    if(!j.titulo) throw new Error('no titulo');
+
+    const ok = await insertAction({
+      pilar:  j.pilar || 1,
+      semana: j.semana || null,
+      titulo: j.titulo,
+      prazo:  j.prazo || today,
+      status: j.status || 'afazer',
+      obs:    j.obs || null,
+    });
+
+    if(!ok) throw new Error('insert failed');
+
+    closeNL();
+    render();
+    toast('Ação adicionada!');
+  } catch(e) {
+    st.textContent = 'Não consegui interpretar. Tente ser mais específico.';
+  }
+  btn.disabled = false;
+}
+
+function toast(msg, err=false){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (err ? ' err' : '');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.className='toast', 2500);
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){ closeModal(); closeNL(); }
+  if(e.key === 'Enter' && e.metaKey){
+    if(document.getElementById('addModal').style.display !== 'none') saveAction();
+    if(document.getElementById('nlModal').style.display !== 'none') processNL();
+  }
+});
+
+loadData();
+</script>
+</body>
+</html>
