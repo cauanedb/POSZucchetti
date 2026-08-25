@@ -2499,6 +2499,215 @@
       "data": "2026-09-11",
       "status": "Em pauta",
       "semBriefing": null
-    }
+    },
+    {
+    "id": "a1f09c2b7d4e5610",
+    "linha": "ZWeb",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Descoberta] Conheça seu cliente de verdade (Cadastro de clientes)",
+    "data": "2026-09-01",
+    "status": "Briefing",
+    "semBriefing": "2026-08-18"
+  },
+  {
+    "id": "b2e18d3c6a5f4721",
+    "linha": "ZWeb",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Reconhecimento] Faz entrega pra outro estado? (MDF-e)",
+    "data": "2026-09-16",
+    "status": "Briefing",
+    "semBriefing": "2026-09-02"
+  },
+  {
+    "id": "c3d27e4b5968a832",
+    "linha": "ZWeb",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Presta serviço? Emita nota sem dor de cabeça (NFS-e)",
+    "data": "2026-09-18",
+    "status": "Briefing",
+    "semBriefing": "2026-09-04"
+  },
+  {
+    "id": "d4c36f5a48792943",
+    "linha": "ZWeb",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Produto bem cadastrado é imposto certo (Cadastro de produtos)",
+    "data": "2026-09-23",
+    "status": "Briefing",
+    "semBriefing": "2026-09-09"
+  },
+  {
+    "id": "e5b45069378a1a54",
+    "linha": "Small",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Reconhecimento] E se o PC der pau amanhã e sumir tudo? (Backup automático)",
+    "data": "2026-09-02",
+    "status": "Briefing",
+    "semBriefing": "2026-08-19"
+  },
+  {
+    "id": "f6a5517826791b65",
+    "linha": "Small",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Reconhecimento] Receber no cartão sem retrabalho (ZPOS)",
+    "data": "2026-09-04",
+    "status": "Briefing",
+    "semBriefing": "2026-08-21"
+  },
+  {
+    "id": "0796428715680c76",
+    "linha": "Small",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Venda e pagamento conectados (ZPOS)",
+    "data": "2026-09-09",
+    "status": "Briefing",
+    "semBriefing": "2026-08-26"
+  },
+  {
+    "id": "18873396045a1d87",
+    "linha": "Small",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Compra separado e vende montado? (Composição/desmembramento)",
+    "data": "2026-09-11",
+    "status": "Briefing",
+    "semBriefing": "2026-08-28"
+  },
+  {
+    "id": "2998245604493e98",
+    "linha": "Small",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Imposto certo sem configurar produto a produto (Perfil de Tributação)",
+    "data": "2026-09-16",
+    "status": "Briefing",
+    "semBriefing": "2026-09-02"
+  },
+  {
+    "id": "3aa9156713382f09",
+    "linha": "Small",
+    "formato": "Reels",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Dar baixa em parcela uma a uma toma tempo (Assistente de parcelas)",
+    "data": "2026-09-18",
+    "status": "Briefing",
+    "semBriefing": "2026-09-04"
+  },
+  {
+    "id": "4bb0067822271a1a",
+    "linha": "Clipp",
+    "formato": "Carrossel",
+    "editoria": "Educativo",
+    "tema": "[Descoberta] Quais clientes seguram o lucro (Curva ABC dos clientes)",
+    "data": "2026-09-02",
+    "status": "Briefing",
+    "semBriefing": "2026-08-19"
+  },
+  {
+    "id": "5cc1178933160b2b",
+    "linha": "Clipp",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Reconhecimento] A NFS-e vai mudar; prepare a base (Clipp Service / NFS-e Padrão Nacional)",
+    "data": "2026-09-09",
+    "status": "Briefing",
+    "semBriefing": "2026-08-26"
+  },
+  {
+    "id": "6dd2289044059c3c",
+    "linha": "Clipp",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Produtos montados sem lançar item por item (Composição)",
+    "data": "2026-09-11",
+    "status": "Briefing",
+    "semBriefing": "2026-08-28"
+  },
+  {
+    "id": "7ee3390155948d4d",
+    "linha": "Clipp",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Descoberta] Promoção que gira estoque, sem custo (ScannTech)",
+    "data": "2026-09-16",
+    "status": "Briefing",
+    "semBriefing": "2026-09-02"
+  },
+  {
+    "id": "8ff4401266837e5e",
+    "linha": "Clipp",
+    "formato": "Reels",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Gestão de qualquer lugar (MeuClipp)",
+    "data": "2026-09-18",
+    "status": "Briefing",
+    "semBriefing": "2026-09-04"
+  },
+  {
+    "id": "9005512377726f6f",
+    "linha": "Clipp",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Reconhecimento] Digitar valor na maquininha é retrabalho (ZPOS)",
+    "data": "2026-09-23",
+    "status": "Briefing",
+    "semBriefing": "2026-09-09"
+  },
+  {
+    "id": "a116623488615070",
+    "linha": "Clipp",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Receituário e OS organizados (Módulo de Ótica)",
+    "data": "2026-09-25",
+    "status": "Briefing",
+    "semBriefing": "2026-09-11"
+  },
+  {
+    "id": "b227734599504181",
+    "linha": "Gdoor",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Do orçamento à nota em poucos cliques (Orçamentos | Gweb)",
+    "data": "2026-09-04",
+    "status": "Briefing",
+    "semBriefing": "2026-08-21"
+  },
+  {
+    "id": "c338845600493292",
+    "linha": "Gdoor",
+    "formato": "Reels",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Pix gerado direto na nota (Chave Pix / QR na NFC-e | Gweb)",
+    "data": "2026-09-09",
+    "status": "Briefing",
+    "semBriefing": "2026-08-26"
+  },
+  {
+    "id": "d449956711382303",
+    "linha": "Gdoor",
+    "formato": "Carrossel",
+    "editoria": "Solução na prática",
+    "tema": "[Consideração] Produtos montados (Composição | Gpro)",
+    "data": "2026-09-11",
+    "status": "Briefing",
+    "semBriefing": "2026-08-28"
+  },
+  {
+    "id": "e55a067822271414",
+    "linha": "Gdoor",
+    "formato": "Reels",
+    "editoria": "Educativo",
+    "tema": "[Reconhecimento] Preço certo por perfil, sem erro no caixa (Tabela de preço | Gpro)",
+    "data": "2026-09-16",
+    "status": "Briefing",
+    "semBriefing": "2026-09-02"
   ]
 }
