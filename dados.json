@@ -2454,10 +2454,10 @@
       "id": "mt8rszphv1qtgs423z9",
       "linha": "ZWeb",
       "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "Venda por voz: no ZWeb sua voz vira nota fiscal",
+      "editoria": "GTM",
+      "tema": "Lançamento | Venda por voz: no ZWeb sua voz vira nota fiscal",
       "data": "2026-09-08",
-      "status": "Briefing",
+      "status": "Em pauta",
       "semBriefing": null
     },
     {
@@ -2478,6 +2478,26 @@
       "tema": "Novo PDV ZWeb",
       "data": "2026-09-29",
       "status": "Briefing",
+      "semBriefing": null
+    },
+    {
+      "id": "mt8sabj4c0wdx556aj8",
+      "linha": "ZWeb",
+      "formato": "Estático",
+      "editoria": "GTM",
+      "tema": "Expectativa | Venda por voz: no ZWeb sua voz vira nota fiscal",
+      "data": "2026-09-03",
+      "status": "Em pauta",
+      "semBriefing": null
+    },
+    {
+      "id": "mt8sb28npk6saxtybx",
+      "linha": "ZWeb",
+      "formato": "Carrossel",
+      "editoria": "GTM",
+      "tema": "Consolidação | Venda por voz: no ZWeb sua voz vira nota fiscal",
+      "data": "2026-09-11",
+      "status": "Em pauta",
       "semBriefing": null
     }
   ]
