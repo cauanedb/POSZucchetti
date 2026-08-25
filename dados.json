@@ -51,21 +51,21 @@
       "semBriefing": null
     },
     {
-      "id": "62470ae40525f1fe",
-      "linha": "Gdoor",
-      "formato": "Reels",
-      "editoria": "Educativo",
-      "tema": "IA já está redefinindo resultado em vendas",
-      "data": "2026-01-14",
-      "status": "Concluido / Programado",
-      "semBriefing": null
-    },
-    {
       "id": "d48a0c9328ab0f76",
       "linha": "Clipp",
       "formato": "Carrossel",
       "editoria": "Educativo",
       "tema": "Quando atualizar o sistema?",
+      "data": "2026-01-14",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "62470ae40525f1fe",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Educativo",
+      "tema": "IA já está redefinindo resultado em vendas",
       "data": "2026-01-14",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -961,21 +961,21 @@
       "semBriefing": null
     },
     {
-      "id": "4b3f9ffd458d6eae",
-      "linha": "Gdoor",
-      "formato": "Reels",
-      "editoria": "Radar comercial",
-      "tema": "PDV: o ponto onde a venda acontece",
-      "data": "2026-05-04",
-      "status": "Concluido / Programado",
-      "semBriefing": null
-    },
-    {
       "id": "ef44345c60b9fb62",
       "linha": "Clipp",
       "formato": "Reels",
       "editoria": "Radar comercial",
       "tema": "39% das MPMEs ainda controlam despesas de forma manual",
+      "data": "2026-05-04",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "4b3f9ffd458d6eae",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "PDV: o ponto onde a venda acontece",
       "data": "2026-05-04",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1101,21 +1101,21 @@
       "semBriefing": null
     },
     {
-      "id": "a65bdc415f837350",
-      "linha": "Gdoor",
-      "formato": "Reels",
-      "editoria": "GTM",
-      "tema": "Gnews Reel âncora: Seu cliente ainda usa duas impressoras no caixa? Stories reforço: Uma impressora. O fluxo completo.",
-      "data": "2026-05-19",
-      "status": "Concluido / Programado",
-      "semBriefing": null
-    },
-    {
       "id": "9ca7753111d2f958",
       "linha": "Clipp",
       "formato": "Reels",
       "editoria": "Parcerias que transformam",
       "tema": "Félix dos Santos - Sol Sistemas",
+      "data": "2026-05-19",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "a65bdc415f837350",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "GTM",
+      "tema": "Gnews Reel âncora: Seu cliente ainda usa duas impressoras no caixa? Stories reforço: Uma impressora. O fluxo completo.",
       "data": "2026-05-19",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1251,21 +1251,21 @@
       "semBriefing": null
     },
     {
-      "id": "de452f8e38635abe",
-      "linha": "Gdoor",
-      "formato": "Reels",
-      "editoria": "Radar comercial",
-      "tema": "Vestuário, calçados e joias respondem por 40% das vendas do Dia dos Namorados.",
-      "data": "2026-06-01",
-      "status": "Concluido / Programado",
-      "semBriefing": null
-    },
-    {
       "id": "dc307d4e081d9ce0",
       "linha": "Small",
       "formato": "Carrossel",
       "editoria": "Radar comercial",
       "tema": "A Copa como oportunidade de consumo no varejo",
+      "data": "2026-06-01",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "de452f8e38635abe",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Vestuário, calçados e joias respondem por 40% das vendas do Dia dos Namorados.",
       "data": "2026-06-01",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1401,11 +1401,11 @@
       "semBriefing": null
     },
     {
-      "id": "c09344ae98bd3e3e",
-      "linha": "Gdoor",
-      "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "Gfood Móvel na SmartPOS: pedido e pagamento no mesmo dispositivo",
+      "id": "ed6ffb76c68ecbf9",
+      "linha": "ZWeb",
+      "formato": "Estático",
+      "editoria": "Educativo",
+      "tema": "MDF-e: o que é e por que importa",
       "data": "2026-06-16",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1421,14 +1421,24 @@
       "semBriefing": null
     },
     {
-      "id": "ed6ffb76c68ecbf9",
-      "linha": "ZWeb",
-      "formato": "Estático",
-      "editoria": "Educativo",
-      "tema": "MDF-e: o que é e por que importa",
+      "id": "c09344ae98bd3e3e",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Gfood Móvel na SmartPOS: pedido e pagamento no mesmo dispositivo",
       "data": "2026-06-16",
       "status": "Concluido / Programado",
       "semBriefing": null
+    },
+    {
+      "id": "mr4xlbj11kbzv09sgim",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Pronto, deu venda",
+      "tema": "Quem somos e o que é o Pronto, deu venda",
+      "data": "2026-06-16",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-05-26"
     },
     {
       "id": "4db8173fab0ed335",
@@ -1441,11 +1451,11 @@
       "semBriefing": null
     },
     {
-      "id": "87cdd452910cfc42",
-      "linha": "ZWeb",
+      "id": "mr4xlurnyudww8odcg",
+      "linha": "PDV",
       "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "MDF-e no ZWeb: como funciona",
+      "editoria": "Pronto, deu venda",
+      "tema": "Sua gestão completa na laranjinha do Itaú",
       "data": "2026-06-18",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1481,12 +1491,12 @@
       "semBriefing": null
     },
     {
-      "id": "d1b803d80e41b050",
-      "linha": "Clipp",
+      "id": "87cdd452910cfc42",
+      "linha": "ZWeb",
       "formato": "Reels",
-      "editoria": "Radar comercial",
-      "tema": "Festas juninas",
-      "data": "2026-06-22",
+      "editoria": "Solução na prática",
+      "tema": "MDF-e no ZWeb: como funciona",
+      "data": "2026-06-18",
       "status": "Concluido / Programado",
       "semBriefing": null
     },
@@ -1496,6 +1506,16 @@
       "formato": "Carrossel",
       "editoria": "Solução na prática",
       "tema": "Como funciona o caixa dia no Small Commerce",
+      "data": "2026-06-22",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "d1b803d80e41b050",
+      "linha": "Clipp",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Festas juninas",
       "data": "2026-06-22",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1511,6 +1531,16 @@
       "semBriefing": null
     },
     {
+      "id": "mr4xmfvbmh570bt7u2p",
+      "linha": "PDV",
+      "formato": "Carrossel",
+      "editoria": "Educativo",
+      "tema": "O problema que o Pronto, deu venda resolve",
+      "data": "2026-06-24",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
       "id": "919a0ff3f35b7ff7",
       "linha": "ZWeb",
       "formato": "Carrossel",
@@ -1521,21 +1551,11 @@
       "semBriefing": "2026-06-03"
     },
     {
-      "id": "64b524e18e8ed73f",
-      "linha": "ZWeb",
+      "id": "024a1db4cc016f0d",
+      "linha": "Gdoor",
       "formato": "Reels",
-      "editoria": "Educativo",
-      "tema": "CFOP e NCM: o que são e por que importam para o varejista.",
-      "data": "2026-06-26",
-      "status": "Concluido / Programado",
-      "semBriefing": "2026-06-05"
-    },
-    {
-      "id": "50201b71d767963a",
-      "linha": "Small",
-      "formato": "Reels",
-      "editoria": "Pílula de venda",
-      "tema": "03 sinais que mostram qual tipo de varejista precisa das soluções Zucchetti.",
+      "editoria": "Solução na prática",
+      "tema": "Gview: como gerar mais valor para clientes que já usam Gpro e Gmicro.",
       "data": "2026-06-26",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1551,11 +1571,41 @@
       "semBriefing": "2026-06-05"
     },
     {
-      "id": "024a1db4cc016f0d",
-      "linha": "Gdoor",
+      "id": "64b524e18e8ed73f",
+      "linha": "ZWeb",
       "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "Gview: como gerar mais valor para clientes que já usam Gpro e Gmicro.",
+      "editoria": "Educativo",
+      "tema": "CFOP e NCM: o que são e por que importam para o varejista.",
+      "data": "2026-06-26",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-05"
+    },
+    {
+      "id": "mr4xnjfes7ma55ynjfm",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Educativo",
+      "tema": "Como habilitar e começar a usar",
+      "data": "2026-06-26",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mr4xn2alhk2wnwfbbgo",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Educativo",
+      "tema": "Como habilitar e começar a usar",
+      "data": "2026-06-26",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "50201b71d767963a",
+      "linha": "Small",
+      "formato": "Reels",
+      "editoria": "Pílula de venda",
+      "tema": "03 sinais que mostram qual tipo de varejista precisa das soluções Zucchetti.",
       "data": "2026-06-26",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1571,21 +1621,21 @@
       "semBriefing": null
     },
     {
-      "id": "590144c1836b5d31",
-      "linha": "Small",
-      "formato": "Carrossel",
-      "editoria": "Solução na prática",
-      "tema": "Como o relatório de vendas do Small resolve um problema concreto do varejista",
-      "data": "2026-06-30",
-      "status": "Concluido / Programado",
-      "semBriefing": null
-    },
-    {
       "id": "3d55c7df0f71ba4e",
       "linha": "ZWeb",
       "formato": "Reels",
       "editoria": "Solução na prática",
       "tema": "Como o ZWeb estrutura a base fiscal da operação",
+      "data": "2026-06-30",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "590144c1836b5d31",
+      "linha": "Small",
+      "formato": "Carrossel",
+      "editoria": "Solução na prática",
+      "tema": "Como o relatório de vendas do Small resolve um problema concreto do varejista",
       "data": "2026-06-30",
       "status": "Concluido / Programado",
       "semBriefing": null
@@ -1601,13 +1651,33 @@
       "semBriefing": "2026-06-22"
     },
     {
+      "id": "mr4xodkozehmpxl2fc9",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Educativo",
+      "tema": "Como cadastrar clientes e produtos",
+      "data": "2026-07-02",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mqqnx90d5djvwjfl426",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "GTM",
+      "tema": "CIOT (Gweb)",
+      "data": "2026-07-03",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-23"
+    },
+    {
       "id": "b9c2aad2befc5dec",
       "linha": "ZWeb",
       "formato": "Carrossel",
       "editoria": "Solução na prática",
       "tema": "Férias escolares e picos de venda",
       "data": "2026-07-03",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-06-30"
     },
     {
@@ -1617,48 +1687,18 @@
       "editoria": "Pílula de venda",
       "tema": "Resumo de vendas: faturou x lucrou",
       "data": "2026-07-03",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-06-17"
     },
     {
-      "id": "mqqnx90d5djvwjfl426",
-      "linha": "Gdoor",
+      "id": "mr4xowprurw9b80ezut",
+      "linha": "PDV",
       "formato": "Reels",
-      "editoria": "GTM",
-      "tema": "CIOT (Gweb)",
-      "data": "2026-07-03",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-23"
-    },
-    {
-      "id": "bc6f1673151494ff",
-      "linha": "ZWeb",
-      "formato": "Carrossel",
       "editoria": "Educativo",
-      "tema": "Revisão de processos na virada do semestre",
-      "data": "2026-07-07",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-18"
-    },
-    {
-      "id": "mqqo3qoth7rvwos6pmw",
-      "linha": "Gdoor",
-      "formato": "Carrossel",
-      "editoria": "Pílula de venda",
-      "tema": "Meta de vendedores no Gpro",
-      "data": "2026-07-07",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-22"
-    },
-    {
-      "id": "mqpkrjtvuz9ved1vhk9",
-      "linha": "Clipp",
-      "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "ClippNFC-e",
-      "data": "2026-07-07",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-22"
+      "tema": "Vendas e nota fiscal direto na laranjinha",
+      "data": "2026-07-03",
+      "status": "Concluido / Programado",
+      "semBriefing": null
     },
     {
       "id": "d26e6e621da0b867",
@@ -1667,38 +1707,48 @@
       "editoria": "Solução na prática",
       "tema": "Data da última venda: produtos parados no estoque",
       "data": "2026-07-07",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-06-23"
     },
     {
-      "id": "bc55fd44d0479b1c",
+      "id": "bc6f1673151494ff",
       "linha": "ZWeb",
-      "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "Meio do ano: no caminho certo? (Plano de Contas e DRE)",
-      "data": "2026-07-09",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-25"
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "Revisão de processos na virada do semestre",
+      "data": "2026-07-07",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-18"
     },
     {
-      "id": "04ae5b33441aa80f",
+      "id": "mqpkrjtvuz9ved1vhk9",
       "linha": "Clipp",
       "formato": "Reels",
       "editoria": "Solução na prática",
-      "tema": "Lançamento rápido de DAVs (pedido e orçamento)",
-      "data": "2026-07-10",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-19"
+      "tema": "ClippNFC-e",
+      "data": "2026-07-07",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-22"
     },
     {
-      "id": "53c338674afe6997",
-      "linha": "Small",
+      "id": "mqqo3qoth7rvwos6pmw",
+      "linha": "Gdoor",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "Meta de vendedores no Gpro",
+      "data": "2026-07-08",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-22"
+    },
+    {
+      "id": "mr9jwy3us3iukpcgt5",
+      "linha": "PDV",
       "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "Mensagem de WhatsApp para clientes do varejista",
-      "data": "2026-07-10",
-      "status": "Briefing",
-      "semBriefing": "2026-06-26"
+      "editoria": "Educativo",
+      "tema": "Configure uma vez e esqueça a burocracia",
+      "data": "2026-07-09",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-18"
     },
     {
       "id": "mqs1reodku9nl66fafg",
@@ -1707,28 +1757,8 @@
       "editoria": "Solução na prática",
       "tema": "Arquivos fiscais",
       "data": "2026-07-10",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-06-19"
-    },
-    {
-      "id": "583b9fb30de5f7c4",
-      "linha": "Gdoor",
-      "formato": "Carrossel",
-      "editoria": "Pílula de venda",
-      "tema": "Precificação no módulo de Compras (Gpro)",
-      "data": "2026-07-13",
-      "status": "Em pauta",
-      "semBriefing": "2026-06-29"
-    },
-    {
-      "id": "3316845e0057f60e",
-      "linha": "ZWeb",
-      "formato": "Carrossel",
-      "editoria": "Solução na prática",
-      "tema": "Reduzir erros fiscais no 2º semestre (Perfil de Tributação)",
-      "data": "2026-07-14",
-      "status": "Briefing",
-      "semBriefing": "2026-07-07"
     },
     {
       "id": "ef259265ed6d677c",
@@ -1736,19 +1766,49 @@
       "formato": "Carrossel",
       "editoria": "Solução na prática",
       "tema": "Dashboard com diagnóstico por IA",
-      "data": "2026-07-14",
-      "status": "Briefing",
+      "data": "2026-07-10",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-06-30"
     },
     {
-      "id": "0645b7884cfda71a",
+      "id": "04ae5b33441aa80f",
       "linha": "Clipp",
       "formato": "Reels",
-      "editoria": "Pílula de venda",
-      "tema": "Controle de cashback",
+      "editoria": "Radar comercial",
+      "tema": "Lançamento rápido de DAVs (pedido e orçamento)",
+      "data": "2026-07-10",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-19"
+    },
+    {
+      "id": "mralqemy1289z4ca7gw",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Envio automático de XML ao contador",
+      "data": "2026-07-10",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "bc55fd44d0479b1c",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Meio do ano: no caminho certo? (Plano de Contas e DRE)",
       "data": "2026-07-14",
-      "status": "Gravar",
-      "semBriefing": "2026-06-29"
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-25"
+    },
+    {
+      "id": "mrdta3b8jl59c5qnjpd",
+      "linha": "PDV",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "Gestão completa por menos de R$1 por dia",
+      "data": "2026-07-16",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-24"
     },
     {
       "id": "67d475c55d6ad0a7",
@@ -1757,17 +1817,7 @@
       "editoria": "Educativo",
       "tema": "iMendes: tranquilidade fiscal na Reforma",
       "data": "2026-07-16",
-      "status": "Em pauta",
-      "semBriefing": "2026-07-02"
-    },
-    {
-      "id": "d283b5ea160d5671",
-      "linha": "ZWeb",
-      "formato": "Reels",
-      "editoria": "Educativo",
-      "tema": "iMendes: tranquilidade fiscal na Reforma",
-      "data": "2026-07-16",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-07-02"
     },
     {
@@ -1777,7 +1827,7 @@
       "editoria": "Educativo",
       "tema": "iMendes: tranquilidade fiscal na Reforma",
       "data": "2026-07-16",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-07-02"
     },
     {
@@ -1786,58 +1836,98 @@
       "formato": "Reels",
       "editoria": "Educativo",
       "tema": "iMendes: tranquilidade fiscal na Reforma",
-      "data": "2026-07-17",
-      "status": "Em pauta",
+      "data": "2026-07-16",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-07-02"
     },
     {
-      "id": "d5e359db7f453904",
+      "id": "mr59rcor1xgzrixg7y6",
       "linha": "Small",
-      "formato": "Carrossel",
-      "editoria": "Solução na prática",
-      "tema": "Controle de inadimplência",
-      "data": "2026-07-20",
-      "status": "Briefing",
-      "semBriefing": "2026-07-06"
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Reforma Tributária começa em 1º de agosto",
+      "data": "2026-07-17",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-26"
     },
     {
-      "id": "6316d986986d9950",
+      "id": "mr5a8gxoyv0a3cei52b",
       "linha": "Clipp",
       "formato": "Reels",
-      "editoria": "Pílula de venda",
-      "tema": "Controle de convênios",
-      "data": "2026-07-20",
-      "status": "Gravar",
-      "semBriefing": "2026-07-06"
+      "editoria": "Radar comercial",
+      "tema": "Reforma Tributária começa em 1º de agosto",
+      "data": "2026-07-17",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-26"
     },
     {
-      "id": "mqqo1lrlgaf2yxq0nve",
+      "id": "mrdugx3z8g5y6vfapq3",
+      "linha": "PDV",
+      "formato": "Estático",
+      "editoria": "Pronto, deu venda",
+      "tema": "Sua laranjinha já tem tudo que seu negócio precisa",
+      "data": "2026-07-17",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mr5aapzowwown385fx",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Reforma Tributária começa em 1º de agosto",
+      "data": "2026-07-17",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-26"
+    },
+    {
+      "id": "mr5a597yjnbzlrd6hi",
       "linha": "Gdoor",
       "formato": "Reels",
-      "editoria": "Solução na prática",
-      "tema": "Gcontábil",
-      "data": "2026-07-21",
-      "status": "Gravar",
-      "semBriefing": "2026-07-06"
+      "editoria": "Radar comercial",
+      "tema": "Reforma Tributária começa em 1º de agosto",
+      "data": "2026-07-17",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-26"
     },
     {
-      "id": "fff875d7b5a77526",
+      "id": "8672c30247b57075",
+      "linha": "Small",
+      "formato": "Carrossel",
+      "editoria": "Educativo",
+      "tema": "Backup em nuvem",
+      "data": "2026-07-21",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-14"
+    },
+    {
+      "id": "mr56itekphml8vs1xjh",
+      "linha": "Clipp",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "Backup na nuvem",
+      "data": "2026-07-21",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-25"
+    },
+    {
+      "id": "f89c1b1b3834706c",
       "linha": "ZWeb",
       "formato": "Carrossel",
       "editoria": "Educativo",
-      "tema": "Empresas que crescem têm processos integrados",
+      "tema": "Planejamento para o Dia dos Pais",
       "data": "2026-07-21",
-      "status": "Briefing",
-      "semBriefing": "2026-07-09"
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-14"
     },
     {
       "id": "554b141670118fbd",
       "linha": "Gdoor",
       "formato": "Carrossel",
       "editoria": "Educativo",
-      "tema": "Backup na Nuvem (Gpro)",
-      "data": "2026-07-23",
-      "status": "Briefing",
+      "tema": "Backup na nuvem",
+      "data": "2026-07-21",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-07-06"
     },
     {
@@ -1847,28 +1937,68 @@
       "editoria": "Pílula de venda",
       "tema": "CT-e: Conhecimento de Transporte eletrônico",
       "data": "2026-07-23",
-      "status": "Em pauta",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-07-09"
     },
     {
-      "id": "f89c1b1b3834706c",
+      "id": "3316845e0057f60e",
       "linha": "ZWeb",
       "formato": "Carrossel",
-      "editoria": "Educativo",
-      "tema": "Planejamento para o Dia dos Pais",
-      "data": "2026-07-24",
-      "status": "Briefing",
-      "semBriefing": "2026-07-14"
+      "editoria": "Solução na prática",
+      "tema": "Reduzir erros fiscais no 2º semestre (Perfil de Tributação)",
+      "data": "2026-07-23",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-07"
     },
     {
-      "id": "8672c30247b57075",
+      "id": "mrtk04h660nfwa8xmmp",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Pronto, deu venda",
+      "tema": "Dê um salto na sua laranjinha",
+      "data": "2026-07-24",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-03"
+    },
+    {
+      "id": "583b9fb30de5f7c4",
+      "linha": "Gdoor",
+      "formato": "Carrossel",
+      "editoria": "Pílula de venda",
+      "tema": "Precificação no módulo de Compras (Gpro)",
+      "data": "2026-07-24",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-06-29"
+    },
+    {
+      "id": "d5e359db7f453904",
       "linha": "Small",
       "formato": "Carrossel",
-      "editoria": "Educativo",
-      "tema": "Backup em nuvem",
+      "editoria": "Solução na prática",
+      "tema": "Controle de inadimplência",
       "data": "2026-07-24",
-      "status": "Briefing",
-      "semBriefing": "2026-07-14"
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-06"
+    },
+    {
+      "id": "mrtk114znpr85ye92y",
+      "linha": "PDV",
+      "formato": "Estático",
+      "editoria": "Pronto, deu venda",
+      "tema": "Sua máquina de cartão do Itaú",
+      "data": "2026-07-25",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-04"
+    },
+    {
+      "id": "mqqo1lrlgaf2yxq0nve",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Gcontábil",
+      "data": "2026-07-29",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-06"
     },
     {
       "id": "68ce3dcc3d38fd17",
@@ -1876,29 +2006,409 @@
       "formato": "Carrossel",
       "editoria": "Educativo",
       "tema": "MDF-e: Manifesto Eletrônico de Documentos Fiscais",
-      "data": "2026-07-28",
-      "status": "Em pauta",
+      "data": "2026-07-29",
+      "status": "Concluido / Programado",
       "semBriefing": "2026-07-13"
     },
     {
-      "id": "0f72f33ce50b2a3c",
+      "id": "fff875d7b5a77526",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Educativo",
+      "tema": "Empresas que crescem têm processos integrados",
+      "data": "2026-07-30",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-09"
+    },
+    {
+      "id": "ms4wrl49dwbkj1rvc0u",
+      "linha": "PDV",
+      "formato": "Carrossel",
+      "editoria": "Educativo",
+      "tema": "Relatórios e histórico de vendas",
+      "data": "2026-07-30",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mr5a6258g6xb7taqsym",
       "linha": "Clipp",
       "formato": "Reels",
-      "editoria": "Parcerias que transformam",
-      "tema": "Depoimento de parceiro (a definir)",
+      "editoria": "Reforma Tributária",
+      "tema": "Simples: existe uma escolha",
       "data": "2026-07-31",
-      "status": "Briefing",
-      "semBriefing": "2026-07-13"
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-10"
     },
     {
-      "id": "mqs1m6zd0uopwz7pjrg",
+      "id": "mr5ab169ieeeh3no78",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Reforma Tributária",
+      "tema": "Simples: existe uma escolha",
+      "data": "2026-07-31",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-10"
+    },
+    {
+      "id": "mr5a8y5ojdlgwiuj2bd",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Reforma Tributária",
+      "tema": "Simples: existe uma escolha",
+      "data": "2026-07-31",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-10"
+    },
+    {
+      "id": "mr59yoapj6ktp9cd05",
+      "linha": "Small",
+      "formato": "Reels",
+      "editoria": "Reforma Tributária",
+      "tema": "Simples: existe uma escolha",
+      "data": "2026-07-31",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-10"
+    },
+    {
+      "id": "ms4ws312f1f1xsigm1j",
+      "linha": "PDV",
+      "formato": "Estático",
+      "editoria": "Educativo",
+      "tema": "Cadastro de clientes",
+      "data": "2026-07-31",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrtm82vvthde56aovzs",
+      "linha": "Small",
+      "formato": "Carrossel",
+      "editoria": "Educativo",
+      "tema": "O que muda em 1/9",
+      "data": "2026-08-04",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-14"
+    },
+    {
+      "id": "mrtm6wm7t2nit7gael",
+      "linha": "ZWeb",
+      "formato": "Carrossel",
+      "editoria": "Educativo",
+      "tema": "O que muda em 1/9",
+      "data": "2026-08-04",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrtm8ri81t4z2ckdhcj",
+      "linha": "Clipp",
+      "formato": "Carrossel",
+      "editoria": "Educativo",
+      "tema": "O que muda em 1/9",
+      "data": "2026-08-04",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrtm7p536dzv31yrp3p",
+      "linha": "Gdoor",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "O que muda em 1/9",
+      "data": "2026-08-04",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-14"
+    },
+    {
+      "id": "ms37lnavobteaqb4nna",
+      "linha": "Clipp",
+      "formato": "Estático",
+      "editoria": "Educativo",
+      "tema": "CIOT",
+      "data": "2026-08-06",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-16"
+    },
+    {
+      "id": "mrtmep5vuev25yqtzui",
+      "linha": "Small",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Small Mobile",
+      "data": "2026-08-07",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "msdle3q4svpyfm33r3f",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Educativo",
+      "tema": "Pagamentos combinados",
+      "data": "2026-08-07",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-17"
+    },
+    {
+      "id": "mrtma88cp8ymznpqmun",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Menu financeiro",
+      "data": "2026-08-07",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrtme5pwwojhoaaqlwl",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Gcoletor",
+      "data": "2026-08-07",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "msdlehdiux0fu8ie67g",
+      "linha": "PDV",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "Cadastro de produtos",
+      "data": "2026-08-08",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-18"
+    },
+    {
+      "id": "ms90d6brihyt56ypb5n",
+      "linha": "Gdoor",
+      "formato": "Carrossel",
+      "editoria": "Solução na prática",
+      "tema": "Ótica no Gpro",
+      "data": "2026-08-12",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-25"
+    },
+    {
+      "id": "ms90gwmqhj5oce1pium",
+      "linha": "ZWeb",
+      "formato": "Carrossel",
+      "editoria": "Solução na prática",
+      "tema": "Controle de grade",
+      "data": "2026-08-12",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "ms90cg4uh2bc66tnv0q",
+      "linha": "Clipp",
+      "formato": "Carrossel",
+      "editoria": "Solução na prática",
+      "tema": "Tabela de preço por cliente",
+      "data": "2026-08-12",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mssz8s8lah77m9fgo9p",
+      "linha": "PDV",
+      "formato": "Estático",
+      "editoria": "Radar comercial",
+      "tema": "NFC-e simplificada",
+      "data": "2026-08-14",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "msxm2gpyljzzbtfqnmn",
+      "linha": "PDV",
+      "formato": "Estático",
+      "editoria": "Radar comercial",
+      "tema": "NFC-e simplificada",
+      "data": "2026-08-14",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "msxm3p3fvgrymm4pjbh",
+      "linha": "PDV",
+      "formato": "Estático",
+      "editoria": "Radar comercial",
+      "tema": "Disponibilidade: sem computador, cabo ou celular adicional",
+      "data": "2026-08-15",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrwbrgdnd9wbc03yk9h",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Reforma Tributária",
+      "tema": "Na Reforma, o crédito tributário passa a pesar em cada venda.",
+      "data": "2026-08-19",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-29"
+    },
+    {
+      "id": "mrwbrmbnvbvp2782hgm",
+      "linha": "Small",
+      "formato": "Reels",
+      "editoria": "Reforma Tributária",
+      "tema": "Na Reforma, o crédito tributário passa a pesar em cada venda.",
+      "data": "2026-08-19",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-29"
+    },
+    {
+      "id": "mrwbrsxhcnasb0v8dm",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Reforma Tributária",
+      "tema": "Na Reforma, o crédito tributário passa a pesar em cada venda.",
+      "data": "2026-08-19",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-29"
+    },
+    {
+      "id": "mrwbr40rff8mtjnp0pt",
       "linha": "Clipp",
       "formato": "Reels",
-      "editoria": "GTM",
-      "tema": "Confere estoque",
-      "data": "2026-08-10",
+      "editoria": "Reforma Tributária",
+      "tema": "Na Reforma, o crédito tributário passa a pesar em cada venda.",
+      "data": "2026-08-19",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-29"
+    },
+    {
+      "id": "mt1zqxy2afy60zbhvxp",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Pronto, deu venda",
+      "tema": "Burocracia fiscal resolvida",
+      "data": "2026-08-20",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrv3g7erszhad8o6oqf",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "AppsCloud: orçamento e ordem de serviço",
+      "data": "2026-08-21",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrv3hk8osz76aobe7lp",
+      "linha": "Gdoor",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Orçamentos no Gweb",
+      "data": "2026-08-21",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-31"
+    },
+    {
+      "id": "ms90dkxfykykf4f4r4a",
+      "linha": "Small",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Ordem de serviço",
+      "data": "2026-08-21",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-07-24"
+    },
+    {
+      "id": "mt3f8v52h91jt7r34ad",
+      "linha": "PDV",
+      "formato": "Reels",
+      "editoria": "Pronto, deu venda",
+      "tema": "Tudo o que o PDV faz pelo seu negócio",
+      "data": "2026-08-21",
+      "status": "Concluido / Programado",
+      "semBriefing": null
+    },
+    {
+      "id": "mrxtokofim3yyfld7lf",
+      "linha": "Clipp",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Módulo financeiro",
+      "data": "2026-08-21",
+      "status": "Concluido / Programado",
+      "semBriefing": "2026-08-07"
+    },
+    {
+      "id": "ms9dtd4s8f5sogm4wf2",
+      "linha": "Small",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "NFS-e Small",
+      "data": "2026-08-26",
+      "status": "A programar",
+      "semBriefing": "2026-08-05"
+    },
+    {
+      "id": "ms9dtjyutgwrapfghy",
+      "linha": "ZWeb",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "NFS-e ZWeb",
+      "data": "2026-08-26",
+      "status": "Em pauta",
+      "semBriefing": "2026-08-05"
+    },
+    {
+      "id": "ms9ds12r90dbsqreqm",
+      "linha": "Clipp",
+      "formato": "Carrossel",
+      "editoria": "Pílula de venda",
+      "tema": "NFS-e Clipp",
+      "data": "2026-08-26",
+      "status": "A programar",
+      "semBriefing": "2026-08-05"
+    },
+    {
+      "id": "ms9dt56q9e08bf1lm2j",
+      "linha": "Gdoor",
+      "formato": "Carrossel",
+      "editoria": "Radar comercial",
+      "tema": "NFS-e Gdoor",
+      "data": "2026-08-26",
+      "status": "A programar",
+      "semBriefing": "2026-08-05"
+    },
+    {
+      "id": "ms90hh8yulpjzq48wsi",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Compras",
+      "data": "2026-08-28",
       "status": "Briefing",
-      "semBriefing": "2026-07-20"
+      "semBriefing": "2026-08-06"
+    },
+    {
+      "id": "0645b7884cfda71a",
+      "linha": "Clipp",
+      "formato": "Reels",
+      "editoria": "Pílula de venda",
+      "tema": "Controle de cashback",
+      "data": "2026-09-04",
+      "status": "Em pauta",
+      "semBriefing": "2026-06-29"
+    },
+    {
+      "id": "mqqy58o1ccdqmxfarlp",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Radar comercial",
+      "tema": "Obrigatoriedade de Integração de Pagamentos (Ceará)",
+      "data": "2026-11-01",
+      "status": "Briefing",
+      "semBriefing": "2026-10-19"
     },
     {
       "id": "mqqy3vsrvn3fzflx4cs",
@@ -1921,16 +2431,6 @@
       "semBriefing": "2026-10-19"
     },
     {
-      "id": "mqqy58o1ccdqmxfarlp",
-      "linha": "ZWeb",
-      "formato": "Reels",
-      "editoria": "Radar comercial",
-      "tema": "Obrigatoriedade de Integração de Pagamentos (Ceará)",
-      "data": "2026-11-01",
-      "status": "Briefing",
-      "semBriefing": "2026-10-19"
-    },
-    {
       "id": "mqqy4bituy3kwtxhkei",
       "linha": "Clipp",
       "formato": "Reels",
@@ -1939,6 +2439,46 @@
       "data": "2026-11-01",
       "status": "Briefing",
       "semBriefing": "2026-10-12"
+    },
+    {
+      "id": "mt8rqsj4ep3h5e2irjh",
+      "linha": "Gdoor",
+      "formato": "Estático",
+      "editoria": "Solução na prática",
+      "tema": "Etiquetas | Gweb",
+      "data": "2026-09-01",
+      "status": "Em pauta",
+      "semBriefing": null
+    },
+    {
+      "id": "mt8rszphv1qtgs423z9",
+      "linha": "ZWeb",
+      "formato": "Reels",
+      "editoria": "Solução na prática",
+      "tema": "Venda por voz: no ZWeb sua voz vira nota fiscal",
+      "data": "2026-09-08",
+      "status": "Briefing",
+      "semBriefing": null
+    },
+    {
+      "id": "mt8rxdkc375jb6z2y9y",
+      "linha": "ZWeb",
+      "formato": "Estático",
+      "editoria": "Solução na prática",
+      "tema": "Renave no ZWeb",
+      "data": "2026-09-25",
+      "status": "Briefing",
+      "semBriefing": null
+    },
+    {
+      "id": "mt8ry6jocxcd5iplp1b",
+      "linha": "ZWeb",
+      "formato": "Estático",
+      "editoria": "Radar comercial",
+      "tema": "Novo PDV ZWeb",
+      "data": "2026-09-29",
+      "status": "Briefing",
+      "semBriefing": null
     }
   ]
 }
